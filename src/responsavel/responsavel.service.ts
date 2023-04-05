@@ -30,28 +30,24 @@ export class ResponsavelService {
     }
 
     async update(id: number, UpdateResponsavelDto: UpdateResponsavelDto): Promise<ResponsavelEntity> { //falta ajustar 
-        let enderecoEntity = await this.enderecoRepository.findOneBy({ id: id }); //Falta ajustar
+        let responsavelEntity = await this.responsavelRepository.findOneBy({ id: id }); //Falta ajustar
 
-        if (!!enderecoEntity) {
-            return this.enderecoRepository.save({
+        if (!!responsavelEntity) {
+            return this.responsavelRepository.save({
                 id: id,
-                rua: UpdateEnderecoDto.rua,
-                bairro: UpdateEnderecoDto.bairro,
-                cidade: UpdateEnderecoDto.cidade,
-                cep: UpdateEnderecoDto.cpf,
-                complemento: UpdateEnderecoDto.complemento,
-                uf: UpdateEnderecoDto.uf,
+                cpf: UpdateResponsavelDto.cpf,
+                
             });
         }
 
         return null;
     }
 
-    async delete(id: number): Promise<EnderecoEntity> {
-        let enderecoEntity = await this.enderecoRepository.findOneBy({ id: id });
+    async delete(id: number): Promise<ResponsavelEntity> {
+        let enderecoEntity = await this.responsavelRepository.findOneBy({ id: id });
 
         if (!!enderecoEntity) {
-            enderecoEntity = await this.enderecoRepository.remove(enderecoEntity);
+            enderecoEntity = await this.responsavelRepository.remove(enderecoEntity);
 
             enderecoEntity.id = id;
         }

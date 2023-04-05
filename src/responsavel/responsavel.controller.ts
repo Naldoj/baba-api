@@ -21,43 +21,44 @@ import { ResponsavelEntity } from './responsavel.entity';
 import { CreateResponsavelDto } from './create.responsavel.dto';
 import { UpdateResponsavelDto } from './update.responsavel.dto';
 
-import { EnderecoService } from './endereco.service';
+import { ResponsavelService } from './responsavel.service';
 
 @ApiTags('Endereco')
 @Controller('Endereco')
-export class EnderecoController {
+export class ResponsavelController {
+    responsavelService: any;
 
     constructor(
-        private readonly enderecoService: EnderecoService,
+        private readonly enderecoService: ResponsavelService,
     ) { }
 
-    @ApiOperation({ operationId: 'createEndereco' })
+    @ApiOperation({ operationId: 'createResponsavel' })
     @Post()
     @ApiCreatedResponse({
         status: 201,
         description: 'Created',
-        type: EnderecoEntity,
+        type: ResponsavelEntity,
     })
-    async create(@Body() createEnderecoDto: CreateEnderecoDto): Promise<EnderecoEntity> {
+    async create(@Body() createEnderecoDto: CreateResponsavelDto): Promise<ResponsavelEntity> {
         return await this.enderecoService.create(createEnderecoDto);
     }
 
-    @ApiOperation({ operationId: 'readEndereco' })
-    @Get(':enderecoId')
+    @ApiOperation({ operationId: 'readResponsavel' })
+    @Get(':responsavelId')
     @ApiResponse({
         status: 200,
         description: 'OK',
-        type: EnderecoEntity,
+        type: ResponsavelEntity,
     })
     @ApiResponse({
         status: 404,
         description: 'Not Found',
     })
-    async read(@Param('enderecoId', ParseIntPipe) enderecoId: number): Promise<EnderecoEntity> {
-        const enderecoEntity = await this.enderecoService.read(enderecoId);
+    async read(@Param('responsavelId', ParseIntPipe) responsavelId: number): Promise<ResponsavelEntity> {
+        const responsavelEntity = await this.responsavelService.read(responsavelId);
 
-        if (!!enderecoEntity) {
-            return enderecoEntity;
+        if (!!responsavelEntity) {
+            return responsavelEntity;
         }
 
         throw new NotFoundException();
@@ -68,16 +69,16 @@ export class EnderecoController {
     @ApiResponse({
         status: 200,
         description: 'OK',
-        type: EnderecoEntity,
+        type: ResponsavelEntity,
     })
     @ApiResponse({
         status: 404,
         description: 'Not Found',
     })
-    async update(@Param('enderecoId', ParseIntPipe) enderecoId: number, @Body() updateCursoDto: UpdateEnderecoDto): Promise<EnderecoEntity> {
+    async update(@Param('enderecoId', ParseIntPipe) enderecoId: number, @Body() updateCursoDto: UpdateResponsavelDto): Promise<ResponsavelEntity> {
         const enderecoEntity = await this.enderecoService.update(enderecoId, updateCursoDto);
 
-        if (!!EnderecoEntity) {
+        if (!!ResponsavelEntity) {
             return enderecoEntity;
         }
 
@@ -89,13 +90,13 @@ export class EnderecoController {
     @ApiResponse({
         status: 200,
         description: 'OK',
-        type: EnderecoEntity,
+        type: ResponsavelEntity,
     })
     @ApiResponse({
         status: 404,
         description: 'Not Found',
     })
-    async delete(@Param('enderecoId', ParseIntPipe) enderecoId: number): Promise<EnderecoEntity> {
+    async delete(@Param('enderecoId', ParseIntPipe) enderecoId: number): Promise<ResponsavelEntity> {
         const enderecoEntity = await this.enderecoService.delete(enderecoId);
 
         if (!!enderecoEntity) {

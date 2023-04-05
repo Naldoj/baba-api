@@ -19,8 +19,7 @@ import {
 
 import { EnderecoEntity } from './endereco.entity';
 import { CreateEnderecoDto } from './create.endereco.dto';
-import { UpdateEnderecoDto } from './update.endereco.dto';
-
+import { UpdateEnderecoDto } from './update.endereco.dto'
 import { EnderecoService } from './endereco.service';
 
 @ApiTags('Endereco')
