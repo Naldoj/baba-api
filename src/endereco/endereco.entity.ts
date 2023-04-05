@@ -62,8 +62,4 @@ export class EnderecoEntity {
     })
     @ApiProperty()
     public uf: string;//
-
-    @ApiProperty()
-    public nome: string;
-
 }

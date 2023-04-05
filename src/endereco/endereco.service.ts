@@ -32,7 +32,7 @@ export class EnderecoService {
         return await this.enderecoRepository.findOneBy({ id: id });
     }
 
-    async update(id: number, updateCursoDto: UpdateEnderecoDto): Promise<EnderecoEntity> {
+    async update(id: number, UpdateCursoDto: UpdateEnderecoDto): Promise<EnderecoEntity> {
         let enderecoEntity = await this.enderecoRepository.findOneBy({ id: id });
 
         if (!!enderecoEntity) {
