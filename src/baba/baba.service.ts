@@ -6,7 +6,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 
 import { BabaEntity } from './Baba.entity';
-import { CreateBabaDto } from './create.Baba.dto';
+import { CreateBabaDto } from './create.Baba';
 import { UpdateBabaDto } from './update.Baba.dto';
 
 @Injectable()

@@ -1,4 +1,4 @@
-import { CreateBabaDto } from './create.Baba.dto';
+import { CreateBabaDto } from './create.Baba';
 
 export class UpdateBabaDto extends CreateBabaDto {
     static cpf: any;

@@ -18,7 +18,7 @@ import {
 } from '@nestjs/swagger';
 
 import { BabaEntity } from './baba.entity';
-import { CreateBabaDto } from './create.baba.dto';
+import { CreateBabaDto } from './create.baba';
 import { UpdateBabaDto } from './update.baba.dto';
 
 import { BabaService } from './baba.service';
