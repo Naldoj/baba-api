@@ -23,13 +23,13 @@ import { UpdateBabaDto } from './update.baba.dto';
 
 import { BabaService } from './baba.service';
 
-@ApiTags('Endereco')
-@Controller('Endereco')
+@ApiTags('Baba')
+@Controller('Baba')
 export class BabaController {
     responsavelService: any;
 
     constructor(
-        private readonly enderecoService: BabaService,
+        private readonly babaService: BabaService,
     ) { }
 
     @ApiOperation({ operationId: 'createBaba' })
@@ -39,8 +39,8 @@ export class BabaController {
         description: 'Created',
         type: BabaEntity,
     })
-    async create(@Body() createEnderecoDto: CreateBabaDto): Promise<BabaEntity> {
-        return await this.enderecoService.create(createEnderecoDto);
+    async create(@Body() createBabaDto: CreateBabaDto): Promise<BabaEntity> {
+        return await this.babaService.create(createBabaDto);
     }
 
     @ApiOperation({ operationId: 'readBaba' })
@@ -64,8 +64,8 @@ export class BabaController {
         throw new NotFoundException();
     }
 
-    @ApiOperation({ operationId: 'updateEndereco' })
-    @Put(':enderecoId')
+    @ApiOperation({ operationId: 'updateBaba' })
+    @Put(':babaId')
     @ApiResponse({
         status: 200,
         description: 'OK',
@@ -75,18 +75,18 @@ export class BabaController {
         status: 404,
         description: 'Not Found',
     })
-    async update(@Param('enderecoId', ParseIntPipe) enderecoId: number, @Body() updateCursoDto: UpdateBabaDto): Promise<BabaEntity> {
-        const enderecoEntity = await this.enderecoService.update(enderecoId, updateCursoDto);
+    async update(@Param('babaId', ParseIntPipe) babaId: number, @Body() updateCursoDto: UpdateBabaDto): Promise<BabaEntity> {
+        const babaEntity = await this.babaService.update(babaId, updateCursoDto);
 
         if (!!BabaEntity) {
-            return enderecoEntity;
+            return babaEntity;
         }
 
         throw new NotFoundException();
     }
 
-    @ApiOperation({ operationId: 'deleteEndereco' })
-    @Delete(':enderecoId')
+    @ApiOperation({ operationId: 'deleteBaba' })
+    @Delete(':babaId')
     @ApiResponse({
         status: 200,
         description: 'OK',
@@ -96,11 +96,11 @@ export class BabaController {
         status: 404,
         description: 'Not Found',
     })
-    async delete(@Param('enderecoId', ParseIntPipe) enderecoId: number): Promise<BabaEntity> {
-        const enderecoEntity = await this.enderecoService.delete(enderecoId);
+    async delete(@Param('babaId', ParseIntPipe) babaId: number): Promise<BabaEntity> {
+        const babaEntity = await this.babaService.delete(babaId);
 
-        if (!!enderecoEntity) {
-            return enderecoEntity;
+        if (!!babaEntity) {
+            return babaEntity;
         }
 
         throw new NotFoundException();
