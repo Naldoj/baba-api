@@ -38,7 +38,7 @@ export class AtendimentoService {
 
         if (!!AtendimentoEntity) {
             return this.AtendimentoRepository.save({
-
+                
             data_hora_atendimento:UpdateAtendimentoDto.data_hora_atendimento,
             data_hora_inicio_atend:UpdateAtendimentoDto.data_hora_inicio_atend,
             data_hora_fim_atend: UpdateAtendimentoDto.data_hora_fim_atend,
