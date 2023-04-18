@@ -18,4 +18,4 @@ import { ResponsavelController } from './responsavel.controller';
         ResponsavelController,
     ],
 })
-export class EndereModule { }
+export class ResponsavelModule { }

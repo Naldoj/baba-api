@@ -45,7 +45,7 @@ export class EnderecoEntity {
         length: 8,
     })
     @ApiProperty()
-    public cep: string;///
+    public cep: string;
 
     @Column({
         name:'complemento',
@@ -53,13 +53,13 @@ export class EnderecoEntity {
         length: 200,
     })
     @ApiProperty()
-    public complemento: string;///
+    public complemento: string;
 
     @Column({
         name:'uf',
         type:'varchar',
-        length:2,//
+        length:2,
     })
     @ApiProperty()
-    public uf: string;//
+    public uf: string;
 }

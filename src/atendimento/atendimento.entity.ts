@@ -8,7 +8,7 @@ import {
     ApiProperty,
 } from '@nestjs/swagger';
 
-@Entity('endereco')
+@Entity('atendimento')
 export class AtendimentoEntity {
 
     @PrimaryGeneratedColumn()
@@ -23,7 +23,7 @@ export class AtendimentoEntity {
     public data_hora_atendimento: Date;
 
     @Column({
-        name: 'data_hora_inicio_atend',
+        name: 'data_hora_inicio_atendimento',
         type: 'date',
     })
     @ApiProperty()
@@ -41,19 +41,19 @@ export class AtendimentoEntity {
         type: 'number',
     })
     @ApiProperty()
-    public Id_Status: number;///
+    public Id_Status: number;
 
     @Column({
         name:'Id_baba',
         type:'number',
     })
     @ApiProperty()
-    public Id_baba: number;///
+    public Id_baba: number;
 
     @Column({
         name:'Id_endereco',
         type:'number',
     })
     @ApiProperty()
-    public Id_endereco: number;//
+    public Id_endereco: number;
 }
