@@ -18,4 +18,4 @@ import { AtendimentoController } from './atendimento.controller';
         AtendimentoController,
     ],
 })
-export class EndereModule { }
+export class AtendimentoModule { }

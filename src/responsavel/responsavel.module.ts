@@ -3,7 +3,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 
 import { ResponsavelEntity } from './responsavel.entity';
 
-import { ResponsavelService } from './responsavel.service'; //// falta criar para poder exportar 
+import { ResponsavelService } from './responsavel.service'; 
 
 import { ResponsavelController } from './responsavel.controller';
 

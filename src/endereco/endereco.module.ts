@@ -18,4 +18,4 @@ import { EnderecoController } from './endereco.controller';
         EnderecoController,
     ],
 })
-export class EndereModule { }
+export class EnderecoModule { }

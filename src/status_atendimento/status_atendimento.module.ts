@@ -18,4 +18,4 @@ import { Status_atendimentoController } from './status_atendimento.controller';
         Status_atendimentoController,
     ],
 })
-export class EndereModule { }
+export class Status_atendimentoModule { }

@@ -18,4 +18,4 @@ import { BabaController } from './baba.controller';
         BabaController,
     ],
 })
-export class EndereModule { }
+export class BabaModule { }
