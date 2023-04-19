@@ -1,12 +1,14 @@
 import {
     Column,
     Entity,
-    PrimaryGeneratedColumn,
+    PrimaryGeneratedColumn, ManyToOne 
 } from 'typeorm';
 
 import {
     ApiProperty,
 } from '@nestjs/swagger';
+
+import { ResponsavelEntity } from 'src/responsavel/responsavel.entity';
 
 @Entity('endereco')
 export class EnderecoEntity {
@@ -62,4 +64,7 @@ export class EnderecoEntity {
     })
     @ApiProperty()
     public uf: string;
+    
+    @ManyToOne(() => ResponsavelEntity, (responsavel) => responsavel.enderecos)
+    responsavel: ResponsavelEntity
 }
