@@ -38,21 +38,21 @@ export class AtendimentoEntity {
 
     @Column({
         name: 'Id_Status',
-        type: 'number',
+        type: 'int',
     })
     @ApiProperty()
     public Id_Status: number;
 
     @Column({
         name:'Id_baba',
-        type:'number',
+        type:'int',
     })
     @ApiProperty()
     public Id_baba: number;
 
     @Column({
         name:'Id_endereco',
-        type:'number',
+        type:'varchar',
     })
     @ApiProperty()
     public Id_endereco: number;
