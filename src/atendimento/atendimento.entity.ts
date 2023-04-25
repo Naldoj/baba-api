@@ -1,7 +1,7 @@
 import {
     Column,
     Entity,
-    PrimaryGeneratedColumn,
+    PrimaryGeneratedColumn,ManyToMany
 } from 'typeorm';
 
 import {
@@ -56,4 +56,6 @@ export class AtendimentoEntity {
     })
     @ApiProperty()
     public Id_endereco: number;
+
+    
 }

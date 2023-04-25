@@ -64,7 +64,7 @@ export class EnderecoEntity {
     })
     @ApiProperty()
     public uf: string;
-    
+
     @ManyToOne(() => ResponsavelEntity, (responsavel) => responsavel.enderecos)
-    responsavel: ResponsavelEntity
+     responsavel: ResponsavelEntity
 }
