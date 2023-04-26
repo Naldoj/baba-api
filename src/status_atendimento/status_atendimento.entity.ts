@@ -1,12 +1,12 @@
 import {
     Column,
     Entity,
-    PrimaryGeneratedColumn,
-} from 'typeorm';
+    PrimaryGeneratedColumn, OneToMany } from 'typeorm';
 
 import {
     ApiProperty,
 } from '@nestjs/swagger';
+import { AtendimentoEntity } from 'src/atendimento/atendimento.entity';
 
 @Entity('status_atendimento')
 export class Status_atendimentoEntity {
@@ -30,5 +30,7 @@ export class Status_atendimentoEntity {
     })
     @ApiProperty()
     public descricao: string;
-
+    
+    @OneToMany(() => AtendimentoEntity, (atendimento) => atendimento.status_atendimento)
+    atendimento: AtendimentoEntity[]
 }

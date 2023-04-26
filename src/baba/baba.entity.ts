@@ -1,15 +1,17 @@
 import {
     Column,
     Entity,
-    PrimaryGeneratedColumn,
+    PrimaryGeneratedColumn,ManyToOne 
 } from 'typeorm';
 
 import {
     ApiProperty,
 } from '@nestjs/swagger';
+import { AtendimentoEntity } from 'src/atendimento/atendimento.entity';
 
 @Entity('baba')
 export class BabaEntity {
+    [x: string]: any;
 
     @PrimaryGeneratedColumn()
     @ApiProperty()
@@ -30,4 +32,7 @@ export class BabaEntity {
     })
     @ApiProperty()
     public nome: string;
+
+    @ManyToOne(() => AtendimentoEntity, (atendimento) => atendimento.baba)
+    baba: AtendimentoEntity[]
 }

@@ -67,4 +67,7 @@ export class EnderecoEntity {
 
     @ManyToOne(() => ResponsavelEntity, (responsavel) => responsavel.enderecos)
      responsavel: ResponsavelEntity
+
+     @ManyToOne(() => EnderecoEntity, (endereco) => endereco.atendimento)
+    atendimento: EnderecoEntity[]
 }
