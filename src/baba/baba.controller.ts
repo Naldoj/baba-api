@@ -26,7 +26,6 @@ import { BabaService } from './baba.service';
 @ApiTags('Baba')
 @Controller('Baba')
 export class BabaController {
-    responsavelService: any;
 
     constructor(
         private readonly babaService: BabaService,
@@ -44,7 +43,7 @@ export class BabaController {
     }
 
     @ApiOperation({ operationId: 'readBaba' })
-    @Get(':responsavelId')
+    @Get(':babaId')
     @ApiResponse({
         status: 200,
         description: 'OK',
@@ -54,11 +53,11 @@ export class BabaController {
         status: 404,
         description: 'Not Found',
     })
-    async read(@Param('responsavelId', ParseIntPipe) responsavelId: number): Promise<BabaEntity> {
-        const responsavelEntity = await this.responsavelService.read(responsavelId);
+    async read(@Param('babaId', ParseIntPipe) babaId: number): Promise<BabaEntity> {
+        const babaEntity = await this.babaService.read(babaId);
 
-        if (!!responsavelEntity) {
-            return responsavelEntity;
+        if (!!babaEntity) {
+            return babaEntity;
         }
 
         throw new NotFoundException();

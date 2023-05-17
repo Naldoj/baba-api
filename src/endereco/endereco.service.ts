@@ -19,10 +19,10 @@ export class EnderecoService {
 
     async create(createEnderecoDto: CreateEnderecoDto): Promise<EnderecoEntity> {
         return await this.enderecoRepository.save({
-            nome: createEnderecoDto.rua,
+            rua: createEnderecoDto.rua,
             bairro: createEnderecoDto.bairro,
             cidade: createEnderecoDto.cidade,
-            cep: createEnderecoDto.cidade,
+            cep: createEnderecoDto.cep,
             complemento: createEnderecoDto.complemento,
             uf: createEnderecoDto.uf,
         });

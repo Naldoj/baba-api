@@ -35,6 +35,10 @@ export class CreateAtendimentoDto {
     @IsNotEmpty()
     @MaxLength(2)
     uf: string 
-    Id_endereco: number
+    
+    @ApiProperty()
+    @IsNotEmpty()
+    @IsInt()
+    Id_endereco: number;
 
 }
