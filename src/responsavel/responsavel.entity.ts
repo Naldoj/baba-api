@@ -8,6 +8,7 @@ import {
     ApiProperty,
 } from '@nestjs/swagger';
 import { EnderecoEntity } from 'src/endereco/endereco.entity';
+import { AtendimentoEntity } from 'src/atendimento/atendimento.entity';
 
 @Entity('responsavel')
 export class ResponsavelEntity {
@@ -33,6 +34,7 @@ export class ResponsavelEntity {
     public nome: string;
 
     @ManyToOne(() => EnderecoEntity, (endereco) => endereco.responsavel )
-    enderecos: EnderecoEntity[]
+    endereco: EnderecoEntity[]
+    
 }
 

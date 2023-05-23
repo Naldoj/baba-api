@@ -25,8 +25,6 @@ import { Status_atendimentoService } from './status_atendimento.service';
 @ApiTags('Status_atendimento')
 @Controller('Status_atendimento')
 export class Status_atendimentoController {
-    responsavelService: any;
-
     constructor(
         private readonly status_atendimentoService: Status_atendimentoService,
     ) { }
@@ -54,7 +52,7 @@ export class Status_atendimentoController {
         description: 'Not Found',
     })
     async read(@Param('responsavelId', ParseIntPipe) responsavelId: number): Promise<Status_atendimentoEntity> {
-        const responsavelEntity = await this.responsavelService.read(responsavelId);
+        const responsavelEntity = await this.status_atendimentoService.read(responsavelId);
 
         if (!!responsavelEntity) {
             return responsavelEntity;

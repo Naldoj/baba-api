@@ -20,7 +20,7 @@ export class Status_atendimentoService {
     async create(createStatus_atendimentoDto: CreateStatus_atendimentoDto): Promise<Status_atendimentoEntity> {
         return await this.status_atendimentoRepository.save({
             nome: createStatus_atendimentoDto.nome,
-            descricao: createStatus_atendimentoDto.nome,
+            descricao: createStatus_atendimentoDto.descricao,
         });
     }
 
@@ -36,7 +36,6 @@ export class Status_atendimentoService {
                 id: id,
                 nome: UpdateStatus_atendimentoDto.nome,
                 descricao: UpdateStatus_atendimentoDto.nome,
-                
             });
         }
 

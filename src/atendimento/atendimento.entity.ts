@@ -59,15 +59,11 @@ export class AtendimentoEntity {
     })
     @ApiProperty()
     public Id_endereco: number;
+    
 
     @OneToMany(() => BabaEntity, (baba) => baba.atendimento)
     baba: BabaEntity
 
-    @OneToMany(() => AtendimentoEntity, (atendimento) => atendimento.endereco)
-    atendimento: AtendimentoEntity
-
-    @OneToMany(() => Status_atendimentoEntity, (status_atendimmento) => status_atendimmento.atendimento)
-    status_atendimmento: Status_atendimentoEntity
-
-
+    @OneToMany(() => AtendimentoEntity, (atendimentos) => atendimentos.endereco)
+    atendimentos: AtendimentoEntity 
 }

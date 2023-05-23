@@ -1,7 +1,7 @@
 import {
     Column,
     Entity,
-    PrimaryGeneratedColumn, ManyToOne 
+    PrimaryGeneratedColumn, ManyToOne
 } from 'typeorm';
 
 import {
@@ -50,24 +50,25 @@ export class EnderecoEntity {
     public cep: string;
 
     @Column({
-        name:'complemento',
-        type:'varchar',
+        name: 'complemento',
+        type: 'varchar',
         length: 200,
     })
     @ApiProperty()
     public complemento: string;
 
     @Column({
-        name:'uf',
-        type:'varchar',
-        length:2,
+        name: 'uf',
+        type: 'varchar',
+        length: 2,
     })
     @ApiProperty()
     public uf: string;
 
-    @ManyToOne(() => ResponsavelEntity, (responsavel) => responsavel.enderecos)
-     responsavel: ResponsavelEntity
+    @ManyToOne(() => ResponsavelEntity, (responsavel) => responsavel.endereco)
+    responsavel: ResponsavelEntity
 
-     @ManyToOne(() => EnderecoEntity, (endereco) => endereco.atendimento)
-    atendimento: EnderecoEntity[]
+    @ManyToOne(() => EnderecoEntity, (endereco) => endereco.atendimentos)
+    atendimentos: EnderecoEntity[]
+    
 }

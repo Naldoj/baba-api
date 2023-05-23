@@ -33,4 +33,5 @@ export class Status_atendimentoEntity {
     
     @OneToMany(() => AtendimentoEntity, (atendimento) => atendimento.status_atendimento)
     atendimento: AtendimentoEntity[]
+    
 }
