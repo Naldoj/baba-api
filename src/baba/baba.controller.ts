@@ -74,8 +74,8 @@ export class BabaController {
         status: 404,
         description: 'Not Found',
     })
-    async update(@Param('babaId', ParseIntPipe) babaId: number, @Body() updateCursoDto: UpdateBabaDto): Promise<BabaEntity> {
-        const babaEntity = await this.babaService.update(babaId, updateCursoDto);
+    async update(@Param('babaId', ParseIntPipe) babaId: number, @Body() updateBabaDto: UpdateBabaDto): Promise<BabaEntity> {
+        const babaEntity = await this.babaService.update(babaId, updateBabaDto);
 
         if (!!BabaEntity) {
             return babaEntity;

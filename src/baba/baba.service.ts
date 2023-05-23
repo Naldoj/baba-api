@@ -36,6 +36,7 @@ export class BabaService {
             return this.BabaRepository.save({
                 id: id,
                 cpf: UpdateBabaDto.cpf,
+                nome: UpdateBabaDto.nome
                 
             });
         }
